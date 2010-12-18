@@ -88,7 +88,7 @@ class amsix {
 			'mdx'          => $rawpeer[8],
 			'routeserver'  => $rawpeer[9],
 		        'location'     => $rawpeer[10],
-			'connection'   => $rawpeer[11]
+			'connection'   => $rawpeer[11],
 			'_shortstatus' => $shortstatus,
 	            );
 		}
