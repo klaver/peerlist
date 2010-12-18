@@ -48,6 +48,7 @@ class amsix {
 	    $rawpeerstr = preg_replace('/[\r\n]/', '', $rawpeerstr);
 	    $rawpeer = $this->toolbox->strip_quotes(split("\t", $rawpeerstr));
 		$rawpeer[5] = substr($rawpeer[5], 0, strpos($rawpeer[5], '/'));
+		$rawpeer[6] = substr($rawpeer[6], 0, strpos($rawpeer[6], '/'));
 
             if (preg_match($this->v4range_match, $rawpeer[5]) && $config['show_v4'] != 'off' && !in_array($rawpeer[5], $config['ignore'])) {
   	        if (preg_match('/^([0-9]{1,3}\.){3}[0-9]{1,3}$/', $rawpeer[5])) {
