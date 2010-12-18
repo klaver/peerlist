@@ -1,0 +1,36 @@
+CREDITS
+
+Credits for this project go to:
+
+* Quanza Engineering BV
+  for providing me with a few real, live platforms to test my code on ;)
+
+* Lucas van Schouwen - Eweka Internet Services
+  for giving me access to several router systems to help build the SNMP
+  module.
+
+* Sachar de Vries - Essent Kabelcom BV
+  for giving me some BGP SNMP OID's so I didn't have to look them up
+
+* Peter van Dijk
+  for the numerous hints & tips and moral support
+
+* #NLNOG and #networker
+  for listening to my stupid questions and occasionally even answering
+  them ;) And, of course, for testing!
+
+* Geert Hauwaerts - Belgian Network Solutions B.V.B.A
+  - Providing a Juniper class. (IPv4 and IPv6)
+  - Adding XML support in bgp-summary feeds.
+  - Enabling support for PHP safe_mode.
+  - Adding the FreeBIX exchange. (IPV4 and IPv6)
+  - Fixing XTPL->selectedrouter.exchange bug.
+  - Fixing localasn in the exchanges.
+
+* Dirk-Jan Wemmers - In2IP BV
+  - beta-testing
+  - helping to solve a potential WARNING
+  - Cisco-no-username quick hack, which my fix is based on
+
+* Jeroen Simonetti - Denit Internet Services BV
+  - patching Geert's Juniper class

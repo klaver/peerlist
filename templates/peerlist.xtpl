@@ -1,0 +1,73 @@
+<!-- BEGIN: page -->
+<html>
+ <head>
+  <title>{application.name} {application.version}</title>
+  <link rel="stylesheet" href="style.css" />
+  <script language="javascript" src="simpleconfig.js"></script>
+ </head>
+
+ <body>
+<!-- BEGIN: header -->
+  <div class="title">{application.name} {application.version}</div>
+
+<!-- BEGIN: routerselection -->
+  <div class="routerselection">
+   <form method="get">
+    <select name="router" onchange="this.form.submit();">
+     <option value="">select a router</option>
+<!-- BEGIN: router -->
+     <option value="{router.id}" {router.selected}>{router.common_name} - {exchange}</option>
+<!-- END: router -->
+    </select>
+    <input type="submit" value="select">
+   </form>
+  </div>
+<!-- END: routerselection -->
+<!-- END: header -->
+
+<!-- BEGIN: menubar -->
+  <div class="subtitle">
+   <div class="spacer"></div>
+   <div class="host">{selectedrouter.common_name} - {exchange}</div>
+   <div class="buttons">
+    <a href="?router={getoptions.router}&amp;as={getoptions.as}">all</a> |
+    <a href="?router={getoptions.router}&amp;show=nopeer&amp;as={getoptions.as}">not peering</a> |
+    <a href="?router={getoptions.router}&amp;show=up&amp;as={getoptions.as}">peers up</a> |
+    <a href="?router={getoptions.router}&amp;show=down&amp;as={getoptions.as}">peers down</a>
+   </div>
+   <div class="spacer"></div>
+  </div>
+<!-- END: menubar -->
+
+<!-- BEGIN: peers -->
+  <div class="peerlist">
+   <table class="routertable">
+<!-- BEGIN: header -->
+    <tr class="header">
+<!-- BEGIN: column -->
+     <td class="column">{column.name}</td>
+<!-- END: column -->
+     <td class="column">Config</td>
+    </tr>
+<!-- END: header -->
+<!-- BEGIN: peer -->
+    <tr class="{peer.shortstatus}" onmouseover="this.className='{peer.shortstatus}_selected';" onmouseout="this.className='{peer.shortstatus}';">
+<!-- BEGIN: column -->
+     <td class="column">{table.column}</td>
+<!-- END: column -->
+     <td class="column"><a href="#" onclick="return opensimpleconfig('{getoptions.router}', '{peer.ix_ip}')">config</a>
+    </tr>
+<!-- END: peer -->
+   </table>
+  </div>
+<!-- END: peers -->
+
+<!-- BEGIN: footer -->
+  <div class="footer">
+   This work is licensed under the <a href="http://www.gnu.org/licenses/gpl-3.0-standalone.html">GPL, version 3</a>.
+  </div>
+<!-- END: footer -->
+
+ </body>
+</html>
+<!-- END: main -->

@@ -1,0 +1,21 @@
+<!-- BEGIN: page -->
+<html>
+ <head>
+  <title>simpleconfig for {peer.ip}</title>
+ </head>
+
+ <body>
+<pre>
+configure terminal
+router bgp {config.exchange.local_asn}
+neighbor {peer.ip} remote-as {peer.asn}
+neighbor {peer.ip} peer-group NL-IX
+neighbor {peer.ip} description {peer.organisation}
+end
+clear ip bgp {peer.ip}
+show bgp ipv4 unicast summary | include {peer.asn}
+</pre>
+ </body>
+
+</html>
+<!-- END: page -->

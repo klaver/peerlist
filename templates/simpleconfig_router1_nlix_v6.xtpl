@@ -1,0 +1,31 @@
+<!-- BEGIN: page -->
+<html>
+ <head>
+  <title>simpleconfig for {peer.ip}</title>
+ </head>
+
+ <body>
+<pre>
+configure terminal
+router bgp {config.exchange.local_asn}
+neighbor {peer.ip} remote-as {peer.asn}
+neighbor {peer.ip} peer-group 6-NL-IX
+neighbor {peer.ip} description {peer.organisation}
+!
+address-family ipv4
+no neighbor {peer.ip} activate
+exit-address-family
+!
+address-family ipv6
+neighbor {peer.ip} activate
+exit-address-family
+!
+end
+!
+clear bgp ipv6 unicast {peer.ip}
+show bgp ipv6 unicast summary | include {peer.asn}
+</pre>
+ </body>
+
+</html>
+<!-- END: page -->

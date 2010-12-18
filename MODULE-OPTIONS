@@ -1,0 +1,233 @@
+WARNING: decix and LINX are *missing*, I'm lazy and it's a beta release. dont whine.
+Also, these docs are hevily outdated. Please refer tou the Source.
+
+
+0. Syntax
+
+  a router config looks something like this:
+
+  $config = array(
+      'router_shortname' => array(
+          'common_name' => 'My First Router',
+          'router' => array(
+              'module' => 'routermodule',
+	      ...(router module specific options here)...
+          ),
+          'exchange' => array(
+              'module' => 'exchangemodule',
+  	      ...(exchange specific options here)...
+          )
+      )
+  );
+
+1. Module Options
+
+  1.1 Generic options
+
+    - common_name
+        common (human readable) name of router, e.g. "My Kiddo-IX Router"
+
+    - ignore
+	array of IP's to ignore
+
+  1.2 Exchanges
+
+    1.2.1 Ams-IX
+
+      for routers at Ams-IX
+
+      - exchange
+          The full name of the Internet Exchange
+
+      - tsv_url
+          URL to the Ams-IX TSV. Default: http://www.ams-ix.net/connected/otherformat/M6-memberlist.tsv
+
+      - tsv_cachetime
+          maximum age of local copy of the TSV in seconds. Defaults to 3600.
+
+      - columns
+          columns to show. Valid options are: organisation, contact, switch, asn, lan, ip, multicast, mdx, location, connection, shortstatus
+
+      - show_v4
+          if set to 'off', v4 addresses will not be shown.
+
+      - show_v6
+          if set to 'off', v6 addresses will not be shown.
+
+      - localasn
+          your local AS number, e.g. 65100
+
+      - module
+          'amsix'
+
+
+    1.2.2 NL-IX
+
+      for routers at the NL-IX
+
+      - exchange
+          The full name of the Internet Exchange
+
+      - tsv_url
+          URL to the NL-IX TSV. Default: http://www.nl-ix.net/tsvmembers.php
+
+      - tsv_cachetime
+          maximum age of local copy of the TSV in seconds. Defaults to 3600.
+
+      - columns
+          columns to show. Valid options are: organisation, ip, location, asn, asmacro, contact, policy, shortstatus
+
+      - localasn
+          your local AS number, e.g. 65100
+
+      - module
+          'nlix'
+
+      - ignore_notready
+	  ignore all peers with the "not ready" status
+
+    1.2.3 FreeBIX
+
+      for routers at FreeBIX
+
+      - exchange
+          The full name of the Internet Exchange
+
+      - tsv_url
+          URL to the FreeBIX TSV. Default: http://www.freebix.be/tsv
+
+      - tsv_cachetime
+          maximum age of local copy of the TSV in seconds. Defaults to 3600.
+
+      - columns
+          columns to show. Valid options are: organisation, contact, asn, ip, multicast, location, connection, shortstatus
+
+      - show_v4
+          if set to 'off', v4 addresses will not be shown.
+
+      - show_v6
+          if set to 'off', v6 addresses will not be shown.
+
+      - localasn
+          your local AS number, e.g. 65100
+
+      - module
+          'freebix'
+
+   1.2.4 Local
+
+      for routers within an IGP
+
+      - exchange
+          The full name of the IGP
+
+      - tsv_file
+          path + filename of TSV. default is empty.
+
+      - columns
+          columns to show. Valid options are: router, function, ip, location
+
+      - module
+          'local'
+
+1.3 Routers
+
+  1.3.1 quagga with telnet
+
+    for quagga-based routers 
+
+    - hostname
+        hostname or IP of router
+
+    - bgpd_port
+        TCP port the bgpd shell is running on. default is 2605
+
+    - enable
+        login password
+
+    - cachetime
+        maximum age of cached router output
+
+    - columns
+        columns to show. Valid options are: ip, bgpver, asn, msgrcvd, msgsent, tblver, inq, outq, uptime, status
+
+    - module
+        'quaggatelnet'
+
+
+
+  1.3.2 Cisco with telnet
+
+    for cisco IOS-based routers
+
+    - hostname
+        hostname or IP of router
+
+    - telnet_port
+        TCP port the bgpd shell is running on. default is 23
+
+    - user
+        login username
+
+    - password
+        login password
+
+    - enable
+        enable password
+
+    - cachetime
+        maximum age of cached router output. Defaults to 300
+
+    - columns
+        columns to show. Valid options are: ip, bgpver, asn, msgrcvd, msgsent, tblver, inq, outq, uptime, status
+
+    - module
+        'ciscotelnet'
+
+  1.3.3 Juniper with telnet
+
+    for Juniper JunOS routers with user/pass (tacacs/radius/local) authentication
+
+    - hostname
+        hostname or IP of router
+
+    - telnet_port
+        TCP port the bgpd shell is running on. default is 23
+
+    - user
+        login username
+
+    - password
+        login password
+
+    - cachetime
+        maximum age of cached router output. Defaults to 300
+
+    - columns
+        columns to show. Valid options are: ip, asn, msgrcvd, msgsent, outq, outq, status, flaps
+
+    - module
+        'junipertelnet'
+
+  1.3.4 RFC1657
+
+    for routers with routertype set to 'snmp_rfc1657'
+
+    - hostname
+        hostname or IP of router
+
+    - snmp_port
+        SNMP port on router
+
+    - snmp_community
+        SNMP community on router
+
+    - cachetime
+        maximum age of cached router output
+
+    - columns
+        columns to show. Valid options are: ip, asn, status
+
+    - module
+        'snmp_rfc1657'
+

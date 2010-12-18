@@ -1,0 +1,24 @@
+Installation procedure for peerlist:
+
+1.) untar
+
+  $ tar jxfv peerlist-latest.tar.bz2
+
+2.) change directory
+
+  $ cd peerlist-<version>/
+
+2.) configure
+
+  $ less MODULE-OPTIONS
+  $ vi config.inc.php
+
+3.) set permissions
+
+  $ chmod 777 tmp/
+
+
+all done.
+
+Please check the templates in the templates/ dir for alterations. A bit of trial-and-error should help you there.
+

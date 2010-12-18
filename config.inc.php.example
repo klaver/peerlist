@@ -1,0 +1,98 @@
+<?php
+
+/* sample config file for peerlist */
+
+$config = array(
+
+
+// Cisco example using amsix ipv4 peers
+    'router1_amsix_v4' => array(
+        'common_name' => 'Router 1 - IPv4',
+	'router'      => array(
+	    'module'    => 'ciscossh',
+            'hostname'  => '1.2.3.4',
+	    'user'      => 'username',
+	    'password'  => 'password',
+	    'columns'   => array('status'),
+	    'ssh_fingerprint' => 'get_fingerprint_by_using_ssh_looks_like_0123456789abcdef0123456789abcdef'
+	),
+	'exchange'    => array(
+	    'module'    => 'amsix',
+            'local_asn' => '65432',
+	    'columns'   => array('asn', 'organisation', 'contact', 'ip', 'location', 'connection', 'routeserver'),
+	    'show_v6'   => 'off',
+	    'ignore'    => array()
+	)
+    ),
+
+	    'show_v6'   => 'off',
+	    'ignore'    => array(),
+	    'ignore_notready' => 'false'
+	)
+    ),
+
+// Cisco example using nlix ipv6 peers
+    'router1_nlix_v6' => array(
+        'common_name' => 'Router 1 - IPv6',
+	'router'      => array(
+	    'module'    => 'ciscossh',
+            'hostname'  => '1,2.3.4',
+            'user'      => 'username',
+            'password'  => 'password',
+            'columns'   => array('status'),
+            'ssh_fingerprint' => 'see_above'
+	),
+
+	'exchange'    => array(
+	    'module'    => 'nlsix',
+            'local_asn' => '65432',
+	    'columns'   => array('asn', 'organisation','ip', 'location'),
+	    'show_v6'   => 'on',
+	    'show_v4'   => 'off',
+	    'ignore'    => array(),
+	    'ignore_notready' => 'false'
+	)
+    ),
+
+// Juniper example using amsix ipv4
+    'router2_amsix_v4' => array(
+        'common_name' => 'Some router - IPv4',
+        'router'      => array(
+            'module'    => 'juniperssh',
+            'hostname'  => '1.2.3.5',
+            'user'      => 'username',
+            'password'  => 'password',
+            'columns'   => array('status'),
+            'ssh_fingerprint' => 'see_above'
+        ),
+        'exchange'    => array(
+            'module'    => 'amsix',
+            'local_asn' => '65432',
+            'columns'   => array('asn', 'organisation', 'contact', 'ip', 'location', 'connection', 'routeserver'),
+            'show_v6'   => 'off',
+            'show_v4'   => 'on',
+            'ignore'    => array()
+        )
+    ),  
+
+// Juniper example using nlix ipv4
+    'router3_nlix_v4' => array(
+        'common_name' => 'Router 3 - IPv4',
+        'router'      => array(
+            'module'    => 'juniperssh',
+            'hostname'  => '1.2.3.6',
+            'user'      => 'username',
+            'password'  => 'password',
+            'columns'   => array('status'),
+            'ssh_fingerprint' => 'see_above'
+        ),
+        'exchange'    => array(
+            'module'    => 'nlix',
+            'local_asn' => '65432',
+            'columns'   => array('asn', 'organisation', 'contact', 'ip', 'location', 'policy'),
+            'show_v6'   => 'off',
+            'show_v4'   => 'on',
+            'ignore'    => array()
+        )
+    ),
+);

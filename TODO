@@ -1,0 +1,21 @@
+TODO
+
+stuff that's REALLY important:
+
+- documentation
+- documentation
+- even more documentation
+- update module docs (outdated!)
+
+some ideas to add in the near future:
+
+- 'proxy' router type (RPC or XML from/to other peerlist installs)
+- sorting - not easy. have to add data types
+- mailto: links clickable? (obfuscation)
+- options to clear IX/router cache on click (configurable)
+- sorting on AS, grouping by AS
+
+ideas to add later:
+
+- clickable router commands (authentication needed, see next point)
+- sessions so people can authenticate and be bound to 1 or more AS'es for previous point
