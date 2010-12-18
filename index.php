@@ -117,7 +117,7 @@ if ($config[$_GET['router']]['common_name'] != '') {
 
 		$shortstatus = 'nopeer';
 	    if ($is_peer['router__shortstatus'] != '') $shortstatus = $is_peer['router__shortstatus'];
-        if ($shortstatus == 'down' && isset($is_peer['ix__shortstatus'])) $shortstatus = $is_peer['ix__shortstatus'];
+        if ($shortstatus == 'nopeer' && $is_peer['ix__shortstatus'] != '') $shortstatus = $is_peer['ix__shortstatus'];
 
 		$is_peer['shortstatus'] = $shortstatus;
 
