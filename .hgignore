@@ -1,2 +1,3 @@
 syntax: glob
 config.inc.php
+tmp/*
