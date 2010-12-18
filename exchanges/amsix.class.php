@@ -89,6 +89,7 @@ class amsix {
 			'routeserver'  => $rawpeer[9],
 		        'location'     => $rawpeer[10],
 			'connection'   => $rawpeer[11]
+			'_shortstatus' => $shortstatus,
 	            );
 		}
 	    }
