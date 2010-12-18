@@ -115,10 +115,10 @@ if ($config[$_GET['router']]['common_name'] != '') {
 	        $is_peer["router_$key"] = $val;
 	    }
 
-            if ($is_peer['router__shortstatus'] != '') {
-	        $is_peer['shortstatus'] = $is_peer['router__shortstatus'];
-	    } else {
+            if ($is_peer['ix__shortstatus'] != '') {
 	        $is_peer['shortstatus'] = $is_peer['ix__shortstatus'];
+	    } else {
+	        $is_peer['shortstatus'] = $is_peer['router__shortstatus'];
 	    }
 
             if (($_GET['show'] == '' || $_GET['show'] == $is_peer['shortstatus'] ) &&

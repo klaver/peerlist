@@ -62,6 +62,21 @@ body {
   border-top:			1px solid #33d;
 }
 
+.routertable .up_other {
+  font-size:			8pt;
+  background-color:		#7f7;
+  border-top:			1px solid #aea;
+}
+
+.routertable .up_other_selected {
+  font-size:			8pt;
+  /* background-color:		#dfd; */
+  background-color:		#55f;
+  color:			#fff;
+  /* border-top:			1px solid #aea; */
+  border-top:			1px solid #33d;
+}
+
 .routertable .up {
   font-size:			8pt;
   background-color:		#bfb;
