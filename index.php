@@ -115,9 +115,9 @@ if ($config[$_GET['router']]['common_name'] != '') {
 	        $is_peer["router_$key"] = $val;
 	    }
 
-        if ($is_peer['ix__shortstatus'] != '') $is_peer['shortstatus'] = $is_peer['ix__shortstatus'];
-	    elseif ($is_peer['router__shortstatus'] != '') $is_peer['shortstatus'] = $is_peer['router__shortstatus'];
-		else $is_peer['router__shortstatus'] = 'nopeer';
+	    if ($is_peer['router__shortstatus'] != '') $is_peer['shortstatus'] = $is_peer['router__shortstatus'];
+        if ($is_peer['shortstatus'] == 'down' && $is_peer['ix__shortstatus'] != '') $is_peer['shortstatus'] = $is_peer['ix__shortstatus'];
+		elseif (!isset($is_peer['shortstatus'])) $is_peer['shortstatus'] = 'nopeer';
 
             if (($_GET['show'] == '' || $_GET['show'] == $is_peer['shortstatus'] ) &&
 	        ($_GET['as'] == '' || $_GET['as'] == $is_peer["ix_".$exchangeobject->getascolumnname()])) {

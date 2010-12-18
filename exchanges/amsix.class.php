@@ -51,6 +51,7 @@ class amsix {
 		$rawpeer[6] = substr($rawpeer[6], 0, strpos($rawpeer[6], '/'));
 
 		if ($rawpeer[9] == 'yes') $shortstatus = 'up_other';
+		else $shortstatus = '';
 
             if (preg_match($this->v4range_match, $rawpeer[5]) && $config['show_v4'] != 'off' && !in_array($rawpeer[5], $config['ignore'])) {
   	        if (preg_match('/^([0-9]{1,3}\.){3}[0-9]{1,3}$/', $rawpeer[5])) {
