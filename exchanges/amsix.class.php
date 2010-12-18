@@ -13,7 +13,7 @@ class amsix {
 
     var $localtsv, $toolbox, $localasn;
 
-    var $tsv_url       = 'http://www.ams-ix.net/connected/otherformat/M6-memberlist.tsv';
+    var $tsv_url       = 'http://www.ams-ix.net/connected/export/tsv';
     var $exchange      = 'AMS-IX (Amsterdam Internet Exchange)';
     var $exchange_short= 'AMS-IX';
     var $cachetime     = 3600;
