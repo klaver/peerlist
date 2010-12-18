@@ -47,7 +47,7 @@ class amsix {
 	    $rawpeerstr = fgets($sock);
 	    $rawpeerstr = preg_replace('/[\r\n]/', '', $rawpeerstr);
 	    $rawpeer = $this->toolbox->strip_quotes(split("\t", $rawpeerstr));
-		$rawpeer[5] = strstr($rawpeer[5], '/', true);
+		$rawpeer[5] = substr($rawpeer[5], 0, strpos($rawpeer[5], '/'));
 
             if (preg_match($this->v4range_match, $rawpeer[5]) && $config['show_v4'] != 'off' && !in_array($rawpeer[5], $config['ignore'])) {
   	        if (preg_match('/^([0-9]{1,3}\.){3}[0-9]{1,3}$/', $rawpeer[5])) {
