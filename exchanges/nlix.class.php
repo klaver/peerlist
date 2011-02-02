@@ -47,6 +47,9 @@ class nlix {
 	    $rawpeerstr = preg_replace('/[\r\n]/', '', $rawpeerstr);
 	    $rawpeer = $this->toolbox->strip_quotes(split("\t", $rawpeerstr));
 
+		if ($rawpeer[8] == 'Yes') $shortstatus = 'up_other';
+		else $shortstatus = '';
+
             if ($rawpeer[3] != '-' && $rawpeer[1] != '-' && $rawpeer[1] != '' && !in_array($rawpeer[1], $config['ignore']) &&
 		($config['ignore_notready'] != 'true' || in_array($rawpeer[6], array('Not ready', 'No')))) {
                 $this->peers[] = array(
@@ -57,7 +60,9 @@ class nlix {
 	   	    'asmacro'      => $rawpeer[4],
 		    'contact'      => $rawpeer[5],
 		    'policy'       => $rawpeer[6],
-		    '_shortstatus' => 'nopeer'
+		    'mlpa'         => $rawpeer[7],
+		    'routeserver'  => $rawpeer[8],
+		    '_shortstatus' => $shortstatus
 	        );
 	    }
 	}

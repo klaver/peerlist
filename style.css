@@ -49,8 +49,8 @@ body {
 
 .routertable .nopeer {
   font-size:			8pt;
-  background-color:		#fbb;
-  border-top:			1px solid #eaa;
+  background-color:		#ddd;
+  border-top:			1px solid #ccc;
 }
 
 .routertable .nopeer_selected {
@@ -94,8 +94,8 @@ body {
 
 .routertable .down {
   font-size:			8pt;
-  background-color:		#ddd;
-  border-top:			1px solid #ccc;
+  background-color:		#fbb;
+  border-top:			1px solid #eaa;
 }
 
 .routertable .down_selected {

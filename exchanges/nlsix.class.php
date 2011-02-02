@@ -22,7 +22,7 @@ class nlsix {
     function nlsix($config) {
         # class initialisation
 
-	$this->tech_url = 'http://www.nl-ix.net/tech.php';
+	$this->tech_url = 'http://www.nl-ix.net/network/ip-ranges/';
         $this->cachefile = BASEDIR . 'tmp/nlsix.cache';
         $this->localasn = $config['local_asn'];
 
@@ -36,24 +36,21 @@ class nlsix {
 	if (@filemtime($this->cachefile) < (date('U') - 300))  {
             $this->cachefile = $this->toolbox->fetchurl($this->tech_url, $this->cachefile, 0777);
 	} 
-	$sock = fopen($this->cachefile, 'r');
-	$header = fgets($sock);
-	while(!feof($sock)) {
-	    $rawpeerstr = fgets($sock);
 
-	    if (preg_match('/^.*<TR><TD>::(A50.:....:.)<TD>(.*)<TD>.+\.(.+)\.nlsix\.net.*$/', $rawpeerstr, $rawpeer) &&
-		($config['ignore_notready'] != 'true' || in_array($rawpeer[6], array('Not ready', 'No')))) {
+	$rawpeerstr = file_get_contents($this->cachefile);
 
-                $this->peers[] = array(
-		    'ip'           => strtolower('2001:7F8:13::'. $rawpeer[1]),
-		    'organisation' => $rawpeer[2],
-		    'location'     => $rawpeer[3],
-	            'asn'          => (int)preg_replace('/A50([0-6]):([0-9]{4}):.*/', "$1$2", $rawpeer[1]),
-		    '_shortstatus' => 'nopeer'
-	        );
+	if (preg_match_all('/<td>::(A50.:....:.).*<td>(.*)<\/td>.*<td>.+\.(.+)\.nlsix\.net<\/td>/msU', $rawpeerstr, $rawpeer)) {
+
+	    for ($p=0;$p<count($rawpeer[1]);$p++) {
+	    $this->peers[] = array(
+		'ip'           => strtolower('2001:7F8:13::'. $rawpeer[1][$p]),
+		'organisation' => $rawpeer[2][$p],
+		'location'     => $rawpeer[3][$p],
+		'asn'          => (int)preg_replace('/A50([0-6]):([0-9]{4}):.*/', "$1$2", $rawpeer[1][$p]),
+		'_shortstatus' => 'nopeer'
+	    );
 	    }
 	}
-	fclose($sock);
     }
 
     function getpeers() {

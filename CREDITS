@@ -2,18 +2,14 @@ CREDITS
 
 Credits for this project go to:
 
-* Quanza Engineering BV
-  for providing me with a few real, live platforms to test my code on ;)
-
-* Lucas van Schouwen - Eweka Internet Services
-  for giving me access to several router systems to help build the SNMP
-  module.
+* Martijn Bakker
+  lead programmer
 
 * Sachar de Vries - Essent Kabelcom BV
   for giving me some BGP SNMP OID's so I didn't have to look them up
 
 * Peter van Dijk
-  for the numerous hints & tips and moral support
+  for the numerous hints & tips
 
 * #NLNOG and #networker
   for listening to my stupid questions and occasionally even answering
@@ -34,3 +30,7 @@ Credits for this project go to:
 
 * Jeroen Simonetti - Denit Internet Services BV
   - patching Geert's Juniper class
+
+* Michiel Klaver (Klaver IT)
+  - fixing up NL-Six class.
+  - numerous other fixes
