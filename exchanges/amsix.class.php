@@ -69,8 +69,8 @@ class amsix {
 			'routeserver'  => $rawpeer[9],
 		        'location'     => $rawpeer[10],
 			'connection'   => $rawpeer[11],
-			'speed'        => $rawpeer[12],
-			'policy'       => $rawpeer[13],
+			'policy'       => $rawpeer[12],
+			'speed'        => $rawpeer[13],
 			'_shortstatus' => $shortstatus,
 	            );
 		}
@@ -91,8 +91,8 @@ class amsix {
 			'routeserver'  => $rawpeer[9],
 		        'location'     => $rawpeer[10],
 			'connection'   => $rawpeer[11],
-			'speed'        => $rawpeer[12],
-			'policy'       => $rawpeer[13],
+			'policy'       => $rawpeer[12],
+			'speed'        => $rawpeer[13],
 			'_shortstatus' => $shortstatus,
 	            );
 		}

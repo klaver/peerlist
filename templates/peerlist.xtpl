@@ -25,6 +25,19 @@
 <!-- END: routerselection -->
 <!-- END: header -->
 
+<!-- BEGIN: legenda -->
+  <div class="legenda">Legenda:
+   <table class="routertable" style="width: 600px;">
+    <tr class="row">
+     <td class="up">Session UP</td>
+     <td class="up_other">Session via RouteServers</td>
+     <td class="down">Session DOWN</td>
+     <td class="nopeer">NO Session Configured</td>
+    </tr>
+   </table>
+  </div>
+<!-- END: legenda -->
+
 <!-- BEGIN: menubar -->
   <div class="subtitle">
    <div class="spacer"></div>

@@ -31,6 +31,10 @@ body {
   color:			#fff;
 }
 
+.legenda {
+  font-weight:			bold;
+}
+
 .routertable {
   border-collapse:		collapse;
   width:			100%;
@@ -45,6 +49,13 @@ body {
 
 .routertable .column {
   padding:			3px;
+}
+
+.routertable .row {
+  padding:			3px;
+  text-align:			center;
+  font-weight:			bold;
+  border:			1px solid black;
 }
 
 .routertable .nopeer {
