@@ -81,6 +81,10 @@ if ($config[$_GET['router']]['common_name'] != '') {
 
     $xtpl->assign('exchange', $exchangeobject->exchange);
 
+    if ($_GET['legenda'] != 'no') {
+        $xtpl->parse('page.legenda');
+    }
+
     if ($_GET['menubar'] != 'no') {
         $xtpl->parse('page.menubar');
     }
