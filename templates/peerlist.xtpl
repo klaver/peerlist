@@ -77,6 +77,7 @@
 
 <!-- BEGIN: footer -->
   <div class="footer">
+   Source: <a href="http://code.google.com/p/peerlist/">Peerlist at Google Code</a>
    This work is licensed under the <a href="http://www.gnu.org/licenses/gpl-3.0-standalone.html">GPL, version 3</a>.
   </div>
 <!-- END: footer -->
