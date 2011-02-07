@@ -30,7 +30,7 @@
    <table class="routertable" style="width: 600px;">
     <tr class="row">
      <td class="up">Session UP</td>
-     <td class="up_other">Session via RouteServers</td>
+     <td class="up_other">via RouteServers</td>
      <td class="down">Session DOWN</td>
      <td class="nopeer">NO Session Configured</td>
     </tr>
