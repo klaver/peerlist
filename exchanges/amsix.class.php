@@ -19,7 +19,7 @@ class amsix {
     var $cachetime     = 3600;
     var $columns       = array('asn', 'organisation', 'contact', 'lan', 'ip', 'location');
     var $peers         = array();
-    var $v4range_match = '/^195\.69\.14[45]/';
+    var $v4range_match = '/^80\.249\.2/';
     var $v6range_match = '/^2001:7f8:1::/';
 
     function amsix($config) {
